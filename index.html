@@ -63,7 +63,21 @@
                         <a id="main-nav-toggle" class="nav-icon"></a>
                         <a class="main-nav-link" href="/">Home</a>
                         <a class="main-nav-link" href="/archives">Archives</a>
-                        <a class="main-nav-link" href="/CV">CV</a>
+
+
+                        <a class="main-nav-link" href="#" onclick="showPdf('/static/cv.pdf')">CV</a>
+                        <iframe id="pdfViewer" style="display: none;" width="100%" height="100%"></iframe>
+
+                        <script>
+                            function showPdf(pdfUrl) {
+                                var pdfViewer = document.getElementById('pdfViewer');
+                                pdfViewer.style.display = 'block';
+                                pdfViewer.src = pdfUrl;
+                                return false; // Prevent the link from navigating
+                            }
+                        </script>
+
+
                     </nav>
                     <nav id="sub-nav">
                         <a id="nav-rss-link" class="nav-icon" href="https://github.com/dingwu55" title="Github"></a>
@@ -85,22 +99,39 @@
             <section id="main">
 
                 <article id="post-tensorflow的legacy-seq2seq" class="article article-type-post" itemscope itemprop="blogPost">
+                    <div class="article-meta">
+                        <a href="/" class="article-date">
+                            <time datetime="2017-03-10T14:50:19.000Z" itemprop="datePublished">2017-03-10</time>
+                        </a>
 
+                    </div>
+
+                    <!-- Markdown内容将在此处加载 -->
+                    <div id="markdown-content"></div>
+
+                    <footer class="article-footer">
+                        <a data-url="http://lan2720.github.io/2017/03/10/tensorflow的legacy-seq2seq/" data-id="cj03yhj2v0000lcfy7mji1ph4"
+                           class="article-share-link">Share</a>
+
+                        <ul class="article-tag-list">
+                            <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tensorflow/">tensorflow</a></li>
+                        </ul>
+                    </footer>
 
                 </article>
 
-
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
                 <script>
                     // 使用JavaScript从Markdown文件获取内容
                     fetch('/裏挟.md')
                         .then(response => response.text())
                         .then(markdown => {
                             // 将Markdown内容转换为HTML
-                            const converter = new showdown.Converter(); // 使用Showdown库进行转换
+                            const converter = new showdown.Converter();
                             const html = converter.makeHtml(markdown);
 
-                            // 将生成的HTML插入到<article>元素中
-                            document.getElementById('post-tensorflow的legacy-seq2seq').innerHTML = html;
+                            // 将生成的HTML插入到<div id="markdown-content">元素中
+                            document.getElementById('markdown-content').innerHTML = html;
                         });
                 </script>
 
@@ -130,6 +161,7 @@
             </aside>
 
         </div>
+
         <footer id="footer">
 
             <div class="outer">
@@ -139,12 +171,15 @@
                 </div>
             </div>
         </footer>
+
     </div>
+
     <nav id="mobile-nav">
 
         <a href="/" class="mobile-nav-link">Home</a>
 
         <a href="/archives" class="mobile-nav-link">Archives</a>
+
 
     </nav>
 
