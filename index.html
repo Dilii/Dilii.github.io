@@ -403,165 +403,6 @@
                         </article>
 
 
-                        <!--
-                        <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-
-                            <div class="post-block">
-                                <link itemprop="mainEntityOfPage" href="https://dilii.github.io//2017\04\27\SQL-温习/">
-
-                                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ding">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-                                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ding Blog">
-    </span>
-
-
-                                <header class="post-header">
-
-
-                                    <h1 class="post-title" itemprop="name headline">
-
-                                        <a class="post-title-link" href="/2015/08/01/console-输出-DOM-对象/" itemprop="url">console 输出 DOM 对象</a></h1>
-
-
-                                    <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-08-01T01:01:01+08:00">
-                2015-08-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-
-                                        <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2015/08/01/console-输出-DOM-对象/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/01/console-输出-DOM-对象/" itemprop="commentCount"></span>
-                </a>
-              </span>
-
-
-                                    </div>
-                                </header>
-
-
-                                <div class="post-body" itemprop="articleBody">
-
-
-                                    <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2>
-                                    <p>前端开发调试的时候，经常需要查看<a href="http://www.w3schools.com/jsref/dom_obj_all.asp" target="_blank" rel="external">HTML
-                                        DOM元素对象</a>，DOM元素对象包含了HTML DOM的各种属性，例如：</p>
-                                    <ul>
-                                        <li><p><strong>位置</strong><br><code>element.offsetHeight</code><br><code>element.offsetWidth</code></p>
-                                        </li>
-                                        <li><p><strong>事件绑定</strong><br><code>element.onclick</code><br><code>element.onkeydown</code></p>
-                                        </li>
-                                        <li><p><strong>子孙DOM节点和祖先DOM节点</strong></p>
-                                        </li>
-                                    </ul>
-                                    <ul>
-                                        <li><strong>文本</strong></li>
-                                    </ul>
-                                    <ul>
-                                        <li><strong>样式</strong></li>
-                                    </ul>
-                                    <p>总之炒鸡有用。</p>
-                                    <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2>
-                                    <p>一般使用 <code>console</code> 控制台打出DOM元素对象。</p>
-                                    <p>然而，事情是这样子的：<a href="http://jsfiddle.net/CntChen/k2a7heb1/4/" target="_blank"
-                                                              rel="external">在jsfiddle查看代码</a></p>
-                                    <p>HTML：<br>
-                                    <figure class="highlight plain">
-                                        <table>
-                                            <tr>
-                                                <td class="gutter">
-                                                    <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div
-                                                            class="line">5</div></pre>
-                                                </td>
-                                                <td class="code">
-                                                    <pre><div class="line">&lt;div id=&quot;messagecontent&quot;&gt;</div><div class="line">	&lt;div class=&quot;message&quot;&gt;</div><div
-                                                            class="line">        &lt;p&gt;hello&lt;/p&gt;</div><div class="line">    &lt;/div&gt;</div><div
-                                                            class="line">&lt;/div&gt;</div></pre>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </figure>
-                                    </p>
-                                    <p>JS：<br>
-                                    <figure class="highlight plain">
-                                        <table>
-                                            <tr>
-                                                <td class="gutter">
-                                                    <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div
-                                                            class="line">5</div></pre>
-                                                </td>
-                                                <td class="code">
-                                                    <pre><div class="line">var messageContent = document.getElementById(&apos;messagecontent&apos;);</div><div
-                                                            class="line">var messages = messageContent.childNodes;</div><div class="line">   console.log(messageContent);</div><div
-                                                            class="line">console.log(messages);</div><div class="line">console.log(messages[0]);</div></pre>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </figure>
-                                    </p>
-                                    <p>在 chrome中</p>
-                                    <p><img src="/img/console-log-dom-object/chrome_dom_console.png" alt="alt text"></p>
-                                    <p>在IE中<br><img src="/img/console-log-dom-object/chrome_dom_console.png" alt="alt text"></p>
-                                    <h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2>
-                                    <p>把DOM对象封装成Array的形式</p>
-                                    <figure class="highlight plain">
-                                        <table>
-                                            <tr>
-                                                <td class="gutter">
-                                                    <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div
-                                                            class="line">5</div><div class="line">6</div><div class="line">7</div></pre>
-                                                </td>
-                                                <td class="code">
-                                                    <pre><div class="line">var messageContent = document.getElementById(&apos;messagecontent&apos;);</div><div
-                                                            class="line">var messages = messageContent.childNodes;</div><div class="line">   messages[0].style.color = &apos;red&apos;;</div><div
-                                                            class="line">   console.log([messageContent]);</div><div class="line">console.log(messages);</div><div
-                                                            class="line">console.log(messages[0]);</div><div
-                                                            class="line">console.log([messages[0]]);</div></pre>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </figure>
-
-
-                                </div>
-
-
-                                <footer class="post-footer">
-
-
-                                    <div class="post-eof"></div>
-
-                                </footer>
-                            </div>
-
-
-                        </article>
-                        -->
-
-
                     </section>
                 </div>
             </div>
@@ -710,31 +551,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
 
 <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -768,7 +584,9 @@
 
     // 在页面加载时调用 renderMarkdown 函数
     window.onload = function () {
-        renderMarkdown('https://raw.githubusercontent.com/Dilii/ponding_pred_master/main/README.md', 'markdown-content');
+        renderMarkdown('./tp.md', 'markdown-content');
+
+
     };
 </script>
 </body>
