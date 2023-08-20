@@ -21,8 +21,8 @@
 		font-family: "NotoSansSC", "Microsoft YaHei",sans-serif;
 		font-size: 14pt;
 		font-weight: 300;
-		line-height: 1.75em;				
-	}	
+		line-height: 1.75em;
+	}
 
 	a {
 		color: #629DD1;
@@ -68,8 +68,8 @@
 
 	strong {
 		font-weight: bold;
-	}			
-	
+	}
+
 	.special {
 		text-align: center;
 	}
@@ -84,18 +84,22 @@
 		font-size: 1.25em;
 		margin-top: -1em;
 		line-height: 1.5em;
+        background: rgba(0,0,0,0.4);
 	}
 
 	header h3 + p {
 		font-size: 1.1em;
 		margin-top: -0.85em;
 		line-height: 1.5em;
-	}	
+	}
 
 	header.major {
 		text-align: center;
 		margin: 0 0 4em 0;
 		position: relative;
+		top: -90px;
+		/*position: absolute;*/
+
 	}
 
 		header.major h2 {
@@ -109,7 +113,7 @@
 
 /* Box */
 
-	.box {		
+	.box {
 		margin-bottom: 2em;
 		padding: 3em 2em;
 	}
@@ -127,7 +131,7 @@
 		.box > :last-child > :last-child > :last-child {
 			margin-bottom: 0;
 		}
-		
+
 
 /* Icon */
 
@@ -156,7 +160,7 @@
 			font-size: 3em;
 			text-align: center;
 			line-height: 2em;
-			border-radius: 100%;			
+			border-radius: 100%;
 		}
 
 		.icon.fa-book {
@@ -184,7 +188,7 @@
 			border-radius: 6px;
 			display: block;
 		}
-		
+
 		.image.fit {
 			display: block;
 			margin: 0 0 2em 0;
@@ -204,9 +208,9 @@
 	}
 
 		ul li {
-			padding-left: 0;			
+			padding-left: 0;
 		}
-			
+
 
 /* Button */
 
@@ -243,18 +247,21 @@
 
 		.button:hover {
 			opacity: 0.8;
-		}		
-		
+		}
+
 
 /* Wrapper */
 
 	.wrapper {
 		padding: 6em 0 4em 0;
+		width: 100%;
+		height: 180%;
+
 	}
 
 		.wrapper.style1 {
 			background: #fff;
-			color: #555f66;			
+			color: #555f66;
 		}
 
 		.wrapper.style2 {
@@ -264,17 +271,17 @@
 			background-position: center center;
 			background-repeat: no-repeat;
 			color: #d8d8d8;
-			position: relative;			
+			position: relative;
 		}
 
-		.style2:before {			
+		.style2:before {
 			  content: '';
 			  position: absolute;
 			  left: 0;
 			  top: 0;
 			  width: 100%;
 			  height: 100%;
-			  background: rgba(0, 0, 0, 0.75);			  		  
+			  background: rgba(0, 0, 0, 0.75);
 		}
 			.wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style4 h2, .wrapper.style4 h3, .wrapper.style4 li{
 				color: #ffffff;
@@ -283,18 +290,19 @@
 			.wrapper.style2 header p {
 				color: #a3a5a7;
 			}
-						
+
 
 	.wrapper.style4 {
-			background-color: #666666;			
+			background-color: #666666;
 			background-size: cover;
 			background-position: center center;
 			background-repeat: no-repeat;
-			color: #fff;			
-			position: relative;			
+			color: #fff;
+			position: relative;
+
 		}
-		
-		
+
+
 
 /* Header */
 
@@ -337,7 +345,7 @@
 			line-height: inherit;
 			position: absolute;
 			right: 1.25em;
-			top: 0;			
+			top: 0;
 		}
 
 			#header nav > ul {
@@ -416,7 +424,7 @@
 			width: 100%;
 			height: 100%;
 			background: rgba(64, 72, 80, 0.25);
-			
+
 		}
 
 		#banner .inner {
@@ -471,66 +479,70 @@
 			}
 
 /*Gallery*/
-	
+
 	.gallery {
 		perspective: 1000px;
 		text-align: center;
 		padding: 2em 0 2em 0;
-		
+		width: 100%;
+		height: 100%;
+
+
 	}
 		.gallery .stage {
 			position: relative;
 			margin: 0 auto;
-			width: 40%;
+			width: 60%;
 			transform-style:preserve-3d;
-		}		
+			top: -100px;
+		}
 		.gallery a {
 			display: inline-block;
-			width: 100%;			
+			width: 100%;
 			transition:transform 1s;
 			cursor: pointer;
 			position: absolute;
-			left: 0;top: 0;			
-		} 
+			left: 0;top: -80px;
+		}
 			.gallery a img {
 				/*防止<img>下面出现空白*/
 				display: block;
 				width: 100%;
 				border: 0;
 				/*图片占位符*/
-				background-color: #666666;				
+				background-color: #666666;
 				background-size: 100% 100%;
 				background-position: center center;
-				background-repeat: no-repeat;				
-			}			
+				background-repeat: no-repeat;
+			}
 
-		.gallery .front {			
+		.gallery .front {
 			transform:translateX(0px) translateZ(0px);
 			position: relative;
-			z-index: 1;			
+			z-index: 1;
 			box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
 			text-align: center;
 		}
-			.gallery .front:before {
-				content:'点击查看更多'; 				
-				position: absolute;
-				left: 0;
-				bottom: 0;
-				width: 100%;
-				height: 30px;
-				line-height: 30px;							
-				background: rgba(0,0,0,0.4);
-				color: #fff;
-			}
-		.gallery .back {			
+			/*.gallery .front:before {*/
+			/*	content:'点击查看更多'; 				*/
+			/*	position: absolute;*/
+			/*	left: 0;*/
+			/*	bottom: 0;*/
+			/*	width: 100%;*/
+			/*	height: 30px;*/
+			/*	line-height: 30px;							*/
+			/*	background: rgba(0,0,0,0.4);*/
+			/*	color: #fff;*/
+			/*}*/
+		.gallery .back {
 			transform:translateZ(-400px);
 
 		}
-		.gallery .left {	
+		.gallery .left {
 			transform:translateX(-40%) translateZ(-200px);
 		}
 			.gallery .left:before {
-				content: '';			
+				content: '';
 				width: 100%;
 				height: 100%;
 				position: absolute;
@@ -541,10 +553,10 @@
 
 		.gallery .right {
 			/*transform:translateX(40%)可以 translateZ(-10%)不能使用%;			*/
-			transform:translateX(40%) translateZ(-200px);			
+			transform:translateX(40%) translateZ(-200px);
 		}
 			.gallery .right:before {
-				content: '';			
+				content: '';
 				width: 100%;
 				height: 100%;
 				position: absolute;
@@ -554,9 +566,10 @@
 			}
 
 	.title {
-		position: relative;		
-		z-index: 1;		
-		margin-bottom: 6em;		
+		position: relative;
+		z-index: 1;
+		margin-bottom: 6em;
+
 	}
 
 			.title div {
@@ -568,9 +581,13 @@
 				transition:all 1s cubic-bezier(1, 0.28, 0, 0.65);
 				text-align: center;
 				width: 100%;
+				color: #434986;
+                background: rgba(0,0,0,0.4);
+                font-weight: bold;
+                font-size: 25px;
 			}
 
-			.title .selected {				
+			.title .selected {
 				opacity: 1;
 				visibility: visible;
 			}
@@ -581,18 +598,18 @@
    		display: inline-block;
    		margin-left: 10px;
 	}
-	
+
 	#three img {
 		display: inline-block;
-		width: 45%;	
-		transition:transform 1s;	
+		width: 45%;
+		transition:transform 1s;
 	}
-		#three img.active {			
+		#three img.active {
 			transform:scale(1.2);
 			z-index: 1;
 		}
 
-	#three ul {   		
+	#three ul {
    		list-style-type: disc;
 	}
 
@@ -609,7 +626,7 @@
 				font-size: 20px;
 				padding: 0 5px;
 			}
-	
+
 
    /*Other*/
 	.other {
@@ -665,14 +682,14 @@
 	.mask {
 		background: #fff;
 		left: 0;
-		top:0;		
-		position: fixed;		
+		top:0;
+		position: fixed;
 		z-index: 10000;
 		box-shadow: 0 0 0.1em 0 rgba(255, 255, 255, 0.25) inset;
 		width: 100%;
 		height: 100%;
 		opacity: 0;
-		visibility: hidden;		
+		visibility: hidden;
 		transition: all 1s;
 		background: rgba(0,0,0,0.8);
 		overflow: hidden;
@@ -713,8 +730,8 @@
 		left: 0;
 		bottom: 10px;
 		z-index: 2;
-		display: none;		
-	}		
+		display: none;
+	}
 		.slider .info {
 			width: 70px;
 			height: 70px;
@@ -722,7 +739,7 @@
 			left: 0;
 			bottom: 0;
 			line-height: 70px;
-			border-radius: 100%;			
+			border-radius: 100%;
 			background: rgba(0,0,0,0.5);
 			text-align: center;
 			cursor: pointer;
@@ -735,19 +752,19 @@
 				position: absolute;
 				left: 0;
 				bottom: 10px;
-				opacity: 0;	
+				opacity: 0;
 				visibility: hidden;
 				transition:all 0.5s cubic-bezier(1,-0.26, 0.26, 1.13);
 				color: #fff;
 				text-decoration: none;
-				border-radius: 100%;			
+				border-radius: 100%;
 				background: rgba(0,0,0,0.5);
 				line-height: 50px;
-				text-align: center;			
+				text-align: center;
 			}
 
 			.slider .circle .active {
-				opacity: 1;	
+				opacity: 1;
 				visibility: visible;
 			}
 
@@ -759,8 +776,8 @@
 		width: 100%;
 		height: 100%;
 		background:transparent;
-		z-index: 10000;		
-	}				
+		z-index: 10000;
+	}
 
 			.wait h1 {
 				display: inline-block;
@@ -772,8 +789,8 @@
 				overflow: hidden;
 				margin: auto;
 				position: absolute;
-				top: 0;left: 0;right: 0;bottom: 0;				
-				padding: 0 0 4em 0;	
+				top: 0;left: 0;right: 0;bottom: 0;
+				padding: 0 0 4em 0;
 				color: #ffffff;
 				z-index: 1;
 			}
@@ -781,22 +798,22 @@
 
 		.wait .loading {
 			width: 100%;
-			height: 2px;		
+			height: 2px;
 			overflow: hidden;
 			margin: auto;
 			position: absolute;
-			top: 0;left: 0;right: 0;bottom: 0;				
-			padding: 0;	
-			z-index: 2;					
+			top: 0;left: 0;right: 0;bottom: 0;
+			padding: 0;
+			z-index: 2;
 		}
 
-		.wait .loading .process {				
+		.wait .loading .process {
 			width: 100%;
 			height: 100%;
 			position: absolute;
 			top: 0;
 			right: 100%;
-			background-color: #1598CB;											
+			background-color: #1598CB;
 		}
 
 		.wait .slideUp {
