@@ -84,42 +84,23 @@
         <div class="outer">
             <section id="main">
 
+
                 <article id="post-tensorflow的legacy-seq2seq" class="article article-type-post" itemscope itemprop="blogPost">
                     <div class="article-meta">
-                        <a href="/" class="article-date">
-                            <time datetime="2017-03-10T14:50:19.000Z" itemprop="datePublished">2017-03-10</time>
+                        <a class="article-date">
+                            <time datetime="2017-03-10T14:50:19.000Z" itemprop="datePublished"><p style="font-weight: bold; font-size: 20px;">个人简历</p></time>
                         </a>
 
                     </div>
 
                     <!-- Markdown内容将在此处加载 -->
-                    <div id="markdown-content"></div>
+                    <div id="cv-content">
+                        <iframe src="./cv.pdf#toolbar=0" style="border: none; width: 100%; height: 355px;"></iframe>
+                    </div>
 
-                    <footer class="article-footer">
-                        <a data-url="http://lan2720.github.io/2017/03/10/tensorflow的legacy-seq2seq/" data-id="cj03yhj2v0000lcfy7mji1ph4"
-                           class="article-share-link">Share</a>
-
-                        <ul class="article-tag-list">
-                            <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tensorflow/">tensorflow</a></li>
-                        </ul>
-                    </footer>
 
                 </article>
 
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
-                <script>
-                    // 使用JavaScript从Markdown文件获取内容
-                    fetch('/tp.md')
-                        .then(response => response.text())
-                        .then(markdown => {
-                            // 将Markdown内容转换为HTML
-                            const converter = new showdown.Converter();
-                            const html = converter.makeHtml(markdown);
-
-                            // 将生成的HTML插入到<div id="markdown-content">元素中
-                            document.getElementById('markdown-content').innerHTML = html;
-                        });
-                </script>
 
             </section>
 
