@@ -26,7 +26,7 @@
 
 #### 神经网络模型
 
-![framework](framework.png)
+![framework](./framework.png)
 
 神经网络参数、模型的结构以及损失函数，评估方法等
 
