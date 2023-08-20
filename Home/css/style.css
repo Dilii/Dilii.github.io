@@ -98,12 +98,14 @@
 		margin: 0 0 4em 0;
 		position: relative;
 		top: -90px;
+
 		/*position: absolute;*/
 
 	}
 
 		header.major h2 {
 			font-size: 2em;
+			font-weight: bold;
 		}
 
 		header.major h2 + p {
@@ -255,8 +257,7 @@
 	.wrapper {
 		padding: 6em 0 4em 0;
 		width: 100%;
-		height: 180%;
-
+		height: 140%;
 	}
 
 		.wrapper.style1 {
@@ -266,7 +267,7 @@
 
 		.wrapper.style2 {
 			background-color: #666666;
-			background-image: url("../images/bg_two.jpg");
+			background-image: url("../images/img_3.png");
 			background-size: cover;
 			background-position: center center;
 			background-repeat: no-repeat;
@@ -281,7 +282,7 @@
 			  top: 0;
 			  width: 100%;
 			  height: 100%;
-			  background: rgba(0, 0, 0, 0.75);
+			  /*background: rgba(232, 221, 221, 0.75);*/
 		}
 			.wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style4 h2, .wrapper.style4 h3, .wrapper.style4 li{
 				color: #ffffff;
@@ -293,7 +294,7 @@
 
 
 	.wrapper.style4 {
-			background-color: #666666;
+			background-color: #8d8383;
 			background-size: cover;
 			background-position: center center;
 			background-repeat: no-repeat;
@@ -523,17 +524,18 @@
 			box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
 			text-align: center;
 		}
-			/*.gallery .front:before {*/
-			/*	content:'点击查看更多'; 				*/
-			/*	position: absolute;*/
-			/*	left: 0;*/
-			/*	bottom: 0;*/
-			/*	width: 100%;*/
-			/*	height: 30px;*/
-			/*	line-height: 30px;							*/
-			/*	background: rgba(0,0,0,0.4);*/
-			/*	color: #fff;*/
-			/*}*/
+
+			.gallery .front:before {
+				content:'点击查看更多';
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 30px;
+				line-height: 30px;
+				background: rgba(0,0,0,0.4);
+				color: #fff;
+			}
 		.gallery .back {
 			transform:translateZ(-400px);
 
@@ -565,6 +567,8 @@
 				background: rgba(0,0,0,0.5);
 			}
 
+
+
 	.title {
 		position: relative;
 		z-index: 1;
@@ -575,22 +579,29 @@
 			.title div {
 				position: absolute;
 				left: 0;
-				top: 0;
+				top: -90px;
 				opacity: 0;
 				visibility: hidden;
 				transition:all 1s cubic-bezier(1, 0.28, 0, 0.65);
 				text-align: center;
 				width: 100%;
 				color: #434986;
-                background: rgba(0,0,0,0.4);
+                /*background: rgba(0,0,0,0.4);*/
                 font-weight: bold;
                 font-size: 25px;
+
 			}
 
 			.title .selected {
 				opacity: 1;
 				visibility: visible;
 			}
+
+			.title .selected1 {
+				opacity: 1;
+				visibility: visible;
+			}
+
 
 	/*Project*/
 
