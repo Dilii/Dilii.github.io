@@ -164,36 +164,11 @@
                                               <time title="Post created" itemprop="dateCreated datePublished"
                                                     datetime="2017-04-27T21:21:04+08:00">2017-04-27</time>
                                         </span>
-                                        <!--
-                                                                                <span class="post-comments-count">
-                                                                                    <span class="post-meta-divider">|</span>
-
-                                                                                    <span class="post-meta-item-icon">
-                                                                                      <i class="fa fa-comment-o"></i>
-                                                                                    </span><a href="/2017/04/27/SQL-温习/#comments" itemprop="discussionUrl"><span
-                                                                                        class="post-comments-count ds-thread-count" data-thread-key="2017/04/27/SQL-温习/"
-                                                                                        itemprop="commentCount"></span>
-                                                                                    </a>
-                                                                                </span>
-                                        -->
                                     </div>
                                 </header>
-
                                 <div id="markdown-content"></div>
-                                <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
-                                <script>
-                                    // 使用JavaScript从Markdown文件获取内容
-                                    fetch('https://github.com/Dilii/ponding_pred_master/blob/main/README.md')
-                                        .then(response => response.text())
-                                        .then(markdown => {
-                                            // 将Markdown内容转换为HTML
-                                            const converter = new showdown.Converter();
-                                            const html = converter.makeHtml(markdown);
 
-                                            // 将生成的HTML插入到<div id="markdown-content">元素中
-                                            document.getElementById('markdown-content').innerHTML = html;
-                                        });
-                                </script>
+
                                 <!--
                                 <div class="post-body" itemprop="articleBody">
                                     <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2>
@@ -756,12 +731,48 @@
 
 
 
+
+
+
+
 </script>
 
 <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+<script>
+    function renderMarkdown(markdownUrl, targetElementId) {
+        // 使用JavaScript从Markdown文件获取内容
+        fetch(markdownUrl)
+            .then(response => response.text())
+            .then(markdown => {
+                // 将Markdown内容转换为HTML
+                const converter = new showdown.Converter();
+                const html = converter.makeHtml(markdown);
+
+                // 将生成的HTML插入到目标元素中
+                const targetElement = document.getElementById(targetElementId);
+                if (targetElement) {
+                    targetElement.innerHTML = html;
+                } else {
+                    console.error(`Element with ID "${targetElementId}" not found.`);
+                }
+            })
+            .catch(error => {
+                console.error(`Error fetching or rendering Markdown: ${error}`);
+            });
+    }
+
+    // 在页面加载时调用 renderMarkdown 函数
+    window.onload = function () {
+        renderMarkdown('https://raw.githubusercontent.com/Dilii/ponding_pred_master/main/README.md', 'markdown-content');
+    };
+</script>
+</body>
+</html>
 
 </body>
 </html>
